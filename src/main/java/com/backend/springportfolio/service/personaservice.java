@@ -15,8 +15,9 @@ public class personaservice implements ipersonaservice {
      public personarepository persorepo;
 
     @Override
-    public List<persona> verpersonas() {
-       return persorepo.findAll();
+    public List<persona> getpersona() {
+        List<persona> persona = persorepo.findAll();
+       return persona;
         
     }
 
@@ -31,8 +32,9 @@ public class personaservice implements ipersonaservice {
     }
 
     @Override
-    public persona buscarpersona(Long id) {
-        return persorepo.findById(id).orElse(null);
+    public persona findpersona(Long id) {
+        persona persona = persorepo.findById(id).orElse(null);
+        return persona;
     }
     
 }
